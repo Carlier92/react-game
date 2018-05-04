@@ -1,1 +1,9 @@
-export default {} // empty for now!
+import board from './board'
+import sidebar from './sidebar'
+import locked from './locked'
+
+export default {
+  board,
+  sidebar,
+  locked,
+}

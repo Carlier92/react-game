@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import Square from '../components/Square'
 import './Board.css'
+import { connect } from 'react-redux'
 
 export class Board extends PureComponent {
   static propTypes = {
@@ -33,4 +34,9 @@ export class Board extends PureComponent {
   }
 }
 
-export default Board
+// At the bottom of the file, where you connect your component:
+const mapStateToProps = ({ board }) => ({ board })
+
+
+// Then pass it to connect:
+export default connect(mapStateToProps)(Board)

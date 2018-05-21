@@ -13,4 +13,6 @@ class App extends Component {
   }
 }
 
+// class incrementQuantity
+
 export default App

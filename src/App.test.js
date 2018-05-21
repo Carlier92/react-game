@@ -13,5 +13,5 @@ describe('<App />', () => {
 
   it('contains a title', () => {
     expect(app.find('h1.title')).toHaveText('0hh1')
-})
+  })
 })

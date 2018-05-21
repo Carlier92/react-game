@@ -1,15 +1,22 @@
-export default (state = [], { type, payload } = {}) => {
+// src/reducers/board.js
 
-  let boardArray = [
-    [0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0]
-  ]
+import { CREATE_GAME } from '../actions/types'
 
-  state = boardArray
+const emptyBoard = [
+  [ 0,0,0,0,0,0 ],
+  [ 0,0,0,0,0,0 ],
+  [ 0,0,0,0,0,0 ],
+  [ 0,0,0,0,0,0 ],
+  [ 0,0,0,0,0,0 ],
+  [ 0,0,0,0,0,0 ]
+]
 
-  return state
+export default (state = emptyBoard, { type, payload } = {}) => {
+  switch (type) {
+  case CREATE_GAME :
+    return [].concat(payload.board)
+
+  default :
+    return state
+  }
 }
